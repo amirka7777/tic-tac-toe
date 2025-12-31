@@ -112,6 +112,11 @@ public class Main {
             makeMove();
 
             printBoard();
+
+            // checkMove();
+            if (checkMove() == true) {
+                break;
+            }
         }
 
     }
