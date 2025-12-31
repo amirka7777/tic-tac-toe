@@ -5,6 +5,39 @@ import java.util.Scanner;
 public class Main {
 
 
+    static boolean checkMove() {
+        char[] move = {'X', 'O'};
+
+        for (char player : move) {
+            for (int i= 0; i < 3; i++) {
+                if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+                    System.out.println("победа игрока " + player);
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < 3; i++) {
+                if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
+                    System.out.println("победа игрока " + player);
+                    return true;
+                }
+            }
+
+            if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
+                System.out.println("победа игрока " + player);
+                return true;
+            }
+
+            if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+                System.out.println("победа игрока " + player);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     static void printBoard() {
             System.out.println(" 0  1  2");
             for (int i = 0; i < 3; i++) {
