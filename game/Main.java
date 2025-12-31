@@ -113,7 +113,6 @@ public class Main {
 
             printBoard();
 
-            // checkMove();
             if (checkMove() == true) {
                 break;
             }
